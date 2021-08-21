@@ -1,5 +1,6 @@
 const adventure = require('../src/setupTeardown');
 /*
+Intercale funções entre os testes definidos no arquivo test/setupTeardown.spec.js.
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
 devido a ameaça de criaturas temíveis, o grupo não chegará inteiro ao fim.
@@ -20,7 +21,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('4 - Quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+    console.log(adventure.specialists);
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
